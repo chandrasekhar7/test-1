@@ -16,3 +16,10 @@ jobs:
         run: npm run build
       - name: Deploy project
         run: echo "Deploying..."
+      - name: Trigger Workflow
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          repository: azadsekhar7/test1
+          workflow: Events Demo
+          event-type: start-second-workflow
