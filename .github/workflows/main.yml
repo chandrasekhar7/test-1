@@ -1,7 +1,5 @@
 name: Events Demo 1
 on: 
-  repository_dispatch:
-    types: [trigger-workflow]
   workflow_dispatch:
 jobs:
   deploy:
