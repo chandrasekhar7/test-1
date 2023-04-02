@@ -20,7 +20,7 @@ jobs:
       - name: Deploy project
         run: echo "Deploying..."
       - name: Trigger Workflow
-        uses: aurelien-baudet/workflow-dispatch@v2
+        uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.PAT }}
           repository: azadsekhar7/test1
