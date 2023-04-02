@@ -1,9 +1,7 @@
 name: Events Demo 1
 on: 
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-workflow]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -26,4 +24,5 @@ jobs:
           token: ${{ secrets.PAT }}
           repository: azadsekhar7/test1
           workflow: Events Demo
+          event-type: trigger-workflow
          # wait-for-completion: false
