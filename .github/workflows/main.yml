@@ -20,7 +20,7 @@ jobs:
       - name: Trigger Workflow
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository: azadsekhar7/test1
           workflow: Events Demo
           event-type: trigger-workflow
