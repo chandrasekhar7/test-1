@@ -4,7 +4,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: qa
+    environment: DEV
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
@@ -18,11 +18,3 @@ jobs:
         run: npm run build
       - name: Deploy project
         run: echo "Deploying..."
-      - name: Trigger Workflow
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.PAT }}
-          repository: azadsekhar7/test1
-          workflow: Events Demo
-          event-type: trigger-workflow
-         # wait-for-completion: false
