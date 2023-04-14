@@ -1,5 +1,6 @@
 name: Events Demo 1
 on: 
+  workflow_call:
   workflow_dispatch:
 jobs:
   deploy:
