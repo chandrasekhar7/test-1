@@ -5,7 +5,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: DEV
+    environment: qa
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
