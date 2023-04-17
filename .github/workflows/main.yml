@@ -21,6 +21,7 @@ jobs:
         run: echo "Deploying..."
   PROD:
     runs-on: ubuntu-latest
+    needs: deploy
     environment: prod
     steps:
       - name: Output event data
