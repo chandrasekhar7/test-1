@@ -4,8 +4,10 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
 
 jobs:
   build:
@@ -34,3 +36,8 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target: 'https://api.github.com/users/octocat'
